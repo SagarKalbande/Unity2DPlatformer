@@ -6,20 +6,29 @@ public class Char_Animation : MonoBehaviour {
 
     Animator CharacterAnimator;
     Rigidbody2D Body;
+    BoxCollider2D BodyCollider;
     bool LookingRight = true;
-
+    bool isgrounded;
 	void Start () {
         CharacterAnimator = GetComponent<Animator>();
         Body = GetComponent<Rigidbody2D>();
+        BodyCollider = GetComponent<BoxCollider2D>();
 	}
 	
 
 	void Update ()
     {
+        if (isgrounded)
+        {
+            CharacterAnimator.SetBool("Jump", false);
+        }
         if (Input.GetKeyDown("up"))
         {
             Body.velocity = new Vector3(0.0f, 10.0f, 0.0f);
+            //CharacterAnimator.SetBool("Jump", true);
         }
+
+
 
         if (Input.GetKey("right"))
         {
@@ -63,4 +72,21 @@ public class Char_Animation : MonoBehaviour {
             CharacterAnimator.SetBool("Meele", false);
         }
 	}
+
+    void OnTriggerEnter2D(Collider2D theCollision)
+    {
+        if (theCollision.gameObject.tag == "floor")
+        {
+            isgrounded = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D theCollision)
+    {
+        if (theCollision.gameObject.tag == "floor")
+        {
+            isgrounded = false;
+            CharacterAnimator.SetBool("Jump", true);
+        }
+    }
 }

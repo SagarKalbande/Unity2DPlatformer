@@ -198,26 +198,6 @@ Prefab:
       propertyPath: m_Name
       value: BigPlatform (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 61307381588318802, guid: 64797317fed34fc478ee8b76255dddf7,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 61307381588318802, guid: 64797317fed34fc478ee8b76255dddf7,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 61307381588318802, guid: 64797317fed34fc478ee8b76255dddf7,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 251499207848908270, guid: 64797317fed34fc478ee8b76255dddf7,
-        type: 2}
-      propertyPath: m_SurfaceArc
-      value: 160
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64797317fed34fc478ee8b76255dddf7, type: 2}
   m_IsPrefabParent: 0
@@ -260,21 +240,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 60119537727727364, guid: b87f2ec6972922d409eeef9fa665c546,
+    - target: {fileID: 50639945473513684, guid: b87f2ec6972922d409eeef9fa665c546,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_Mass
+      value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 4756240848603482, guid: b87f2ec6972922d409eeef9fa665c546, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.5131606
+    - target: {fileID: 50639945473513684, guid: b87f2ec6972922d409eeef9fa665c546,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4756240848603482, guid: b87f2ec6972922d409eeef9fa665c546, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.5262703
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 60119537727727364, guid: b87f2ec6972922d409eeef9fa665c546, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b87f2ec6972922d409eeef9fa665c546, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1726006027
@@ -431,33 +407,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1953834454 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1864799845996530, guid: b87f2ec6972922d409eeef9fa665c546,
-    type: 2}
-  m_PrefabInternal: {fileID: 400664311}
---- !u!61 &1953834457
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1953834454}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.45, y: -0.1}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.41, y: 5.42}
-    newSize: {x: 6.41, y: 5.42}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 4.5}
-  m_EdgeRadius: 0
