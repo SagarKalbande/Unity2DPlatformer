@@ -9,6 +9,8 @@ public class Char_Animation : MonoBehaviour {
     BoxCollider2D BodyCollider;
     bool LookingRight = true;
     bool isgrounded;
+    public GameObject BulletRef;
+
 	void Start () {
         CharacterAnimator = GetComponent<Animator>();
         Body = GetComponent<Rigidbody2D>();
@@ -88,5 +90,9 @@ public class Char_Animation : MonoBehaviour {
             isgrounded = false;
             CharacterAnimator.SetBool("Jump", true);
         }
+    }
+    void SpawnBullet()
+    {
+        Instantiate(BulletRef, gameObject.transform);
     }
 }
