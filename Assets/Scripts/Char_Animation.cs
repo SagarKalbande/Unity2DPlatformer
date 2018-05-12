@@ -24,7 +24,7 @@ public class Char_Animation : MonoBehaviour {
         }
         if (Input.GetKeyDown("up"))
         {
-            Body.velocity = new Vector3(0.0f, 10.0f, 0.0f);
+            //Body.velocity = new Vector3(0.0f, 10.0f, 0.0f);
             //CharacterAnimator.SetBool("Jump", true);
         }
 
