@@ -30,7 +30,7 @@ public class Char_Animation : MonoBehaviour {
             //CharacterAnimator.SetBool("Jump", true);
         }
 
-
+        
 
         if (Input.GetKey("right"))
         {
@@ -64,6 +64,7 @@ public class Char_Animation : MonoBehaviour {
         else if (Input.GetKey("x"))
         {
             CharacterAnimator.SetBool("Shoot", true);
+            //SpawnBullet();
         }
 
         else
@@ -93,6 +94,15 @@ public class Char_Animation : MonoBehaviour {
     }
     void SpawnBullet()
     {
-        Instantiate(BulletRef, gameObject.transform);
+        GameObject SpawnedBullet = Instantiate(BulletRef, this.gameObject.transform.GetChild(0).position , Quaternion.identity);
+        if (LookingRight)
+        {
+            SpawnedBullet.GetComponent<BulletBehavior>().direction = 1;
+        }
+        else
+        {
+            SpawnedBullet.GetComponent<BulletBehavior>().direction = -1;
+        }
+
     }
 }

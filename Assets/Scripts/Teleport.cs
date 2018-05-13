@@ -22,16 +22,20 @@ public class Teleport : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
-        if(Verticalteleport)
+        if (collidedObject.tag == "Player")
         {
-            Vector3 tempPosition = collidedObject.transform.position;
-            collidedObject.transform.position =   new Vector3(tempPosition.x , teleportValueOnAxis, 0.0f);
+            if (Verticalteleport)
+            {
+                Vector3 tempPosition = collidedObject.transform.position;
+                collidedObject.transform.position = new Vector3(tempPosition.x, teleportValueOnAxis, 0.0f);
+            }
+            else
+            {
+                Vector3 tempPosition = collidedObject.transform.position;
+                collidedObject.transform.position = new Vector3(teleportValueOnAxis, tempPosition.y, 0.0f);
+            }
         }
-        else
-        {
-            Vector3 tempPosition = collidedObject.transform.position;
-            collidedObject.transform.position = new Vector3(teleportValueOnAxis, tempPosition.y,  0.0f);
-        }
+
         
 
     }

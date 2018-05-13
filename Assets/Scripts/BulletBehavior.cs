@@ -15,14 +15,15 @@ public class BulletBehavior : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = gameObject.transform.position + new Vector3(direction*0.1f, 0.0f, 0.0f);
-
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
-        Destroy(collidedObject.gameObject);
+        if (collidedObject.tag == "Zombie")
+        {
+            Destroy(collidedObject.gameObject);
+        }
+
     }
 
 
