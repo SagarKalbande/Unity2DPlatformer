@@ -22,7 +22,7 @@ public class Teleport : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collidedObject)
     {
-        if (collidedObject.tag == "Player")
+        if (collidedObject.tag == "Player" || collidedObject.tag == "Zombie")
         {
             if (Verticalteleport)
             {
